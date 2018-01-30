@@ -1,0 +1,80 @@
+<ul id="nav-mobile" class="sidenav sidenav-fixed" style="transform: translateX(0%);">
+    <li class="no-padding nav-user">
+        <div class="container">
+            <div class="row row-tight">
+                <div class="col s12 center-align">
+                    <h6>Angular Cli Project</h6>
+                    <div class="nav-logo">
+                        <img width="100" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="no-padding menu">
+        <ul class="collapsible user-menu">
+            <li class="bold menu"><a (click)="clickTab('/home')" [class.active]="clickedTab === '/home'" routerLink="" class="collapsible-header waves-effect waves-primary">Home</a></li>
+            <li class="bold menu"><a (click)="clickTab('/about')" [class.active]="clickedTab === '/about'" routerLink="about" class="collapsible-header waves-effect waves-primary">About</a></li>
+            <li class="bold menu"><a (click)="clickTab('/bug')" [class.active]="clickedTab === '/bug'" routerLink="bug" class="collapsible-header waves-effect waves-primary">Bug Record</a></li>
+            <li *ngIf="isAdmin" class="bold"><a (click)="clickTab('/topic')" [class.active]="clickedTab === '/topic'" routerLink="topic" class="collapsible-header waves-effect waves-primary">Topic</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a (click)="clickTab('/topic/idea/list')" [class.active]="clickedTab === '/topic/idea/list'" routerLink="topic/idea/list" class="waves-effect waves-primary">IdeaList</a></li>
+                        <li><a routerLink="topic">temp</a></li>
+                        <li><a routerLink="topic">temp</a></li>
+                        <li><a routerLink="topic">temp</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li *ngIf="isLoggedIn" class="bold"><a (click)="clickTab('/codewar')" [class.active]="clickedTab === '/codewar'" routerLink="codewar" class="collapsible-header waves-effect waves-primary">CodeWar</a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a (click)="clickTab('/codewar/list')" [class.active]="clickedTab === '/codewar/list'" routerLink="codewar/list" class="waves-effect waves-primary">List</a></li>
+                        <li><a routerLink="codewar">temp</a></li>
+                        <li><a routerLink="codewar">temp</a></li>
+                        <li><a routerLink="codewar">temp</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>
+<nav class="main-nav">
+    <div class="nav-wrapper">
+        <p class="brand-logo">{{clickedTab}}</p>
+        <ul class="right hide-on-med-and-down">
+            <li *ngIf="!isLoggedIn">
+                <div class="row">
+                    <div class="col tight s2"></div>
+                    <div class="input-field input-field-tight col tight s3">
+                        <input [(ngModel)]="loginAccount" (focusout)="validInput('Account')" [class.invalid]="!error.isAccountValid" placeholder="account" id="account" type="text" class="validate input-tight" required>
+                    </div>
+                    <div class="input-field input-field-tight col tight s3">
+                        <input [(ngModel)]="loginPassword" (focusout)="validInput('Password')" [class.invalid]="!error.isPasswordValid" placeholder="password" id="password" type="password" class="validate input-tight" required>
+                    </div>
+                    <div class="col tight s2">
+                        <button (click)="doLogin()" class="waves-effect waves-light btn-flat text-primary">Login</button>
+                    </div>
+                    <div class="col tight s2">
+                        <a routerLink="Register" class="link-ghost">Register</a>
+                    </div>
+                </div>
+            </li>
+            <li *ngIf="isLoggedIn">Hello {{currentUserInfo.userName}}</li>
+            <li *ngIf="isLoggedIn">
+                <div class="nav-user-photo col tight s3">
+                    <img [src]="currentUserInfo.photoUrl" alt="">
+                </div>
+            </li>
+            <li *ngIf="isLoggedIn">
+                <ul>
+                    <li><i class="material-icons">account_balance_wallet</i></li>
+                    <li><i class="material-icons">account_box</i></li>
+                    <li><i class="material-icons">add_to_photos</i></li>
+                    <li><i class="material-icons">settings</i></li>
+                </ul>
+            </li>
+            <li *ngIf="isLoggedIn"><button (click)="doLogout()" class="waves-effect waves-light btn-flat text-primary">Logout</button></li>
+        </ul>
+    </div>
+</nav>

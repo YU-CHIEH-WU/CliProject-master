@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row card-page card-content z-depth-2">
+        <div *ngIf="!ideaList">
+            <h3>Loading...</h3>
+        </div>
+        <div *ngIf="ideaList">
+            <div class="col s12">
+                <h1>
+                    IdeaList
+                </h1>
+            </div>
+            <div class="col s12 right-align">
+                <button (click)="toAdd()" class="waves-effect waves-light btn-flat text-primary">Add a new idea</button>
+            </div>
+            <table class="responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>FullName</th>
+                        <th>CreateTime</th>
+                        <th class="center-align">Edit</th>
+                        <th class="center-align">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let idea of ideaList; let i = index" class="borderless">
+                        <td>
+                            {{i+1}}
+                        </td>
+                        <td>
+                            {{idea.name}}
+                        </td>
+                        <td>
+                            {{idea.full_name}}
+                        </td>
+                        <td>
+                            {{idea.created_at | date}}
+                        </td>
+                        <td>
+                            <button (click)="doEdit(idea)" class="waves-effect waves-light btn-flat disabled text-yellow">EDIT</button>
+                        </td>
+                        <td>
+                            <button (click)="doDelete(i)" class="waves-effect waves-light btn-flat text-red">DELETE</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="col s12">
+    <p>Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters,</p>
+    <p>each taken only once - coming from s1 or s2. #Examples: ``` a = "xyaabbbccccdefww" b = "xxxxyyyyabklmopq" longest(a, b) -> "abcdefklmopqwxy"</p>
+    <p>a = "abcdefghijklmnopqrstuvwxyz" longest(a, a) -> "abcdefghijklmnopqrstuvwxyz" ```</p>
+</div>
+<div class="row">
+    <div class="input-field col s6">
+        <input [(ngModel)]="string1" id="string1" type="text" class="validate">
+        <label for="string1">String1</label>
+    </div>
+    <div class="input-field col s6">
+        <input [(ngModel)]="string2" id="string2" type="text" class="validate">
+        <label for="string2">String2</label>
+    </div>
+    <div class="col s3">
+        <button (click)="doTest()" class="waves-effect waves-light btn-flat">TEST</button>
+    </div>
+    <div class="col s9">
+        <p [innerHtml]="result"></p>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="col s12">
+    <p>ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.</p>
+    <p>If the function is passed a valid PIN string, return true, else return false.</p>
+    <p>eg:</p>
+    <p>validatePIN("1234") === true</p>
+    <p>validatePIN("12345") === false</p>
+    <p>validatePIN("a234") === false</p>
+</div>
+<div class="row">
+    <div class="input-field col s6">
+        <input [(ngModel)]="pin" id="pin" type="text" class="validate">
+        <label for="pin">PIN Code</label>
+    </div>
+    <div class="col s3">
+        <button (click)="doTest()" class="waves-effect waves-light btn-flat">TEST</button>
+    </div>
+    <div class="col s3">
+        <p [innerHtml]="result"></p>
+    </div>
+</div>

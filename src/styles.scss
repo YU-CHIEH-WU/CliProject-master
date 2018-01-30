@@ -1,0 +1,211 @@
+    /* You can add global styles to this file, and also import other style files */
+    /* variable */
+    
+    $dark: #212121;
+    $light-dark :#424242;
+    $lighter-dark:#646464;
+    $text-dark:#292929;
+    $primary:#628DB2;
+    $primary80:rgba($primary, 0.8);
+    $primary60:rgba($primary, 0.6);
+    $primary20:rgba($primary, 0.2);
+    $success:#4CAF50;
+    $danger:#ef5350;
+    $danger80:rgba($danger, 0.8);
+    /**/
+    /* basic elements*/
+    
+    body {
+        margin: 0;
+        background-color: $dark;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    /**/
+    /* materialize */
+    
+    .container {
+        @media only screen and (min-width: 993px) {
+            width: 90%;
+        }
+    }
+    
+    .sidenav.sidenav-fixed {
+        background-color: $light-dark;
+        width: 260px;
+        .menu {
+            .active {
+                background-color: $primary80;
+                &:hover {
+                    background-color: $primary80;
+                }
+            }
+            a {
+                color: whitesmoke;
+                &:hover {
+                    background-color: $primary60;
+                }
+            }
+        }
+        .collapsible-header:hover {
+            background-color: $primary60;
+        }
+        .collapsible-body {
+            li>a {
+                padding: 0 37.5px 0 45px;
+                .active {
+                    background-color: $primary20;
+                }
+            }
+        }
+    }
+    
+    nav {
+        background-color: $dark;
+        box-shadow: none;
+    }
+    
+    nav .brand-logo {
+        margin: 0;
+    }
+    
+    .dark-theme {
+        color: whitesmoke;
+        tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .sidenav {
+            background-color: $light-dark;
+        }
+        .collapsible-header {
+            background-color: $light-dark;
+        }
+        .collapsible-body,
+        .side-nav.fixed .collapsible-body {
+            background-color: $light-dark;
+        }
+        input {
+            color: whitesmoke;
+        }
+    }
+    
+    table.highlight>tbody>tr:hover {
+        background-color: $lighter-dark;
+    }
+    
+    .btn-flat {
+        color: whitesmoke;
+        transition: color .6s;
+        text-transform: none;
+    }
+    
+    .waves-effect.waves-primary .waves-ripple {
+        background-color: $primary80;
+    }
+    
+    .sidenav .collapsible-header,
+    .sidenav.sidenav-fixed .collapsible-header {
+        padding: 0 32px;
+    }
+    
+    input:not([type]),
+    input[type=text]:not(.browser-default),
+    input[type=password]:not(.browser-default),
+    input[type=email]:not(.browser-default),
+    input[type=url]:not(.browser-default),
+    input[type=time]:not(.browser-default),
+    input[type=date]:not(.browser-default),
+    input[type=datetime]:not(.browser-default),
+    input[type=datetime-local]:not(.browser-default),
+    input[type=tel]:not(.browser-default),
+    input[type=number]:not(.browser-default),
+    input[type=search]:not(.browser-default),
+    textarea.materialize-textarea {
+        border-bottom: none;
+    }
+    
+    .toast {
+        background-color: $primary80;
+        &.danger {
+            background-color: $danger80;
+        }
+    }
+    /**/
+    
+    .col.tight {
+        padding: 0 0.1rem;
+    }
+    
+    .input-field-tight {
+        margin: 0;
+    }
+    
+    .text-tight {
+        margin: 0;
+    }
+    
+    .row-tight {
+        margin-bottom: 0;
+    }
+    
+    .icon-dark {
+        color: $text-dark;
+    }
+    
+    .btn-flat.btn-dark {
+        border: 2px;
+        color: $text-dark;
+    }
+    
+    .main {
+        padding-left: 260px;
+    }
+    
+    .card-page.card-content {
+        min-height: calc(100vh - 112px);
+    }
+    
+    .card-content {
+        margin-top: 24px;
+        padding: 16px;
+        min-height: 160px;
+        background-color: $light-dark;
+    }
+    
+    .valid-text {
+        height: 16px;
+        margin: 0;
+        line-height: 16px;
+    }
+    
+    .link-ghost {
+        margin-top: 2px;
+        font-size: 1rem;
+        outline: none;
+        &:hover {
+            background-color: none;
+            text-decoration: underline;
+        }
+    }
+    
+    .text-primary:hover {
+        color: $primary;
+    }
+    
+    .text-grey:hover {
+        color: #eceff1;
+    }
+    
+    .text-yellow:hover {
+        color: #fbc02d;
+    }
+    
+    .text-red:hover {
+        color: #e53935;
+    }
+    
+    .text-teal:hover {
+        color: #009688;
+    }

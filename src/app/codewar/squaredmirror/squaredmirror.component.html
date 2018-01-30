@@ -1,0 +1,13 @@
+<div class="col s12">
+    <p>You are given a string of n lines, each substring being n characters long: For example:</p>
+    <p>s = "abcd\nefgh\nijkl\nmnop"</p>
+    <p>We will study some transformations of this square of strings.</p>
+    <p>Vertical mirror: vert_mirror (or vertMirror or vert-mirror)</p>
+    <p>vert_mirror(s) => "dcba\nhgfe\nlkji\nponm"</p>
+    <p>Horizontal mirror: hor_mirror (or horMirror or hor-mirror)</p>
+    <p>hor_mirror(s) => "mnop\nijkl\nefgh\nabcd"</p>
+</div>
+<button (click)="doTest()" class="waves-effect waves-light btn-flat">TEST</button>
+<p [innerHtml]="testData"></p>
+<p [innerHtml]="vertResult"></p>
+<p [innerHtml]="horResult"></p>

@@ -1,0 +1,40 @@
+#account,
+#password {
+    margin: 0 0 10px 0;
+}
+
+.main-nav {
+    padding-left: 276px;
+}
+
+#user-input {
+    margin-top: -24px;
+}
+
+.nav-user {
+    margin-bottom: 8px;
+}
+
+.nav-user-photo {
+    display: inline-block;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: -16px;
+    >img {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.nav-wrapper {
+    ul {
+        li {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+    <div class="row card-content z-depth-2">
+        <div class="col s12">
+            <h1>
+                Add a new Idea
+            </h1>
+        </div>
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input required [(ngModel)]="idea.name" id="name" type="text" class="validate">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input required [(ngModel)]="idea.full_name" id="full_name" type="text" class="validate">
+                    <label for="full_name">Full Name</label>
+                </div>
+                <div class="col s12 text-ceter">
+                    <button (click)="doAdd()" class="waves-effect waves-light btn-flat text-primary">DONE</button>
+                    <button (click)="doBack()" class="waves-effect waves-light btn-flat text-grey">BACK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
