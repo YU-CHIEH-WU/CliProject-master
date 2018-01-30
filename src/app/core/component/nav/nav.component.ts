@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { MaterializeService } from '../../../service/shared/materialize/materialize.service';
-import { UserService, UserInfo } from '../../../service/core/user/user.test-service';
+import { UserService, UserInfo } from '../../../service/core/user/user.service';
 
 @Component({
     selector: 'app-nav',
@@ -71,6 +71,7 @@ export class NavComponent implements OnInit {
         this.loginAccount = '';
         this.loginPassword = '';
         this.isLoggedIn = false;
+        this.isAdmin = false;
         this.currentUserInfo = new UserInfo();
         this._router.navigateByUrl('home');
         this._materialize.closeCollapsible(this.userMenu);
